@@ -8,7 +8,7 @@ int main()
     printf("saisie: %s\n", saisie);
 
     printf("Lecture d'un long: ");
-    long l = lire_long();
+    long l = lire_long(2);
     printf("saisie: %ldl\n", l);
 
     printf("Lecture d'un int: ");

@@ -31,16 +31,18 @@ char* lireSting(int longueur)
     return chaine;
 }
 
-long lire_long()
+long lire_long( int base )
 {
     char* tmp = lireSting(15);
 
-    return strtol(tmp, NULL, 10);
+    if ( base != 2 && base != 8 && base != 16 && base != 64 ) base = 10;
+
+    return strtol(tmp, NULL, base);
 }
 
 int lire_int()
 {
-    return lire_long();
+    return lire_long(10);
 }
 
 double lire_double()
@@ -48,4 +50,30 @@ double lire_double()
     char* tmp = lireSting(100);
 
     return strtod(tmp, NULL);
+}
+
+long long lire_llong( int base )
+{
+    if ( base != 2 && base != 8 && base != 16 && base != 64 ) base = 10;
+
+    return strtoll(lireSting(100), NULL, base);
+}
+
+long double lire_ldouble()
+{
+    return strtold(lireSting(100), NULL);
+}
+
+unsigned long lire_ulong( int base )
+{
+    if ( base != 2 && base != 8 && base != 16 && base != 64 ) base = 10;
+
+    return strtoul(lireSting(100), NULL, base);
+}
+
+unsigned long long lire_ullong( int base )
+{
+    if ( base != 2 && base != 8 && base != 16 && base != 64 ) base = 10;
+
+    return strtoull(lireSting(100), NULL, base);
 }
