@@ -33,7 +33,7 @@ char* lireSting(int longueur)
 
 long lire_long( int base )
 {
-    char* tmp = lireSting(15);
+    char* tmp = lireSting(100);
 
     if ( base != 2 && base != 8 && base != 16 && base != 64 ) base = 10;
 
